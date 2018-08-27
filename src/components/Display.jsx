@@ -9,11 +9,17 @@ class Display extends Component {
   }
   render() {
     const { loading } = this.state;
-    if (loading) {
-      return (
-        <p>Loading...</p>
-      )
-    }
+    // if (loading) {
+    //   return (
+    //     <p>Loading...</p>
+    //   )
+    // }
+    return(
+      <div className="display inside-border">
+        <input type="text" className="main" maxLength="21"/>
+        <input type="text" className="calculations" maxLength="21"/>
+      </div>
+    )
   }
 }
 

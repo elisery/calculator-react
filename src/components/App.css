@@ -1,0 +1,111 @@
+html {
+  font-size: 16px;
+  font-family: sans-serif;
+  font-weight: bold;
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  background-color: #E7F5F7;
+  height: 100%;
+  padding-top: 3.5rem;
+}
+
+/* Universal Styles */
+.main-shadow {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.main-border {
+  border-radius: 1rem;
+  border: 0.5px solid #C9C3B5;
+}
+
+.inside-border {
+  border-radius: 0.5rem;
+  border: 0.5px solid #C9C3B5;
+}
+
+/* Main layout */
+.main-layout {
+  background-color: #EFECE4;
+  height: 33rem;
+  width: 25rem;
+  border-radius: 1rem;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  margin: auto;
+}
+
+/* Calculator Display */
+.display {
+  height: 5rem;
+  width: 21rem;
+  margin: 1rem 1.5rem 0rem 1.5rem;
+  border-radius: 0.4rem;
+  padding: 1rem;
+  text-align: right;
+  box-shadow: inset 0 0 7px #504937;
+}
+
+input {
+  border: none;
+  background-color: #EFECE4;
+  font-family: 'Numans', sans-serif;
+  width: 21rem;
+  outline: 0;
+  text-align: right;
+}
+
+input.main {
+  font-size: 2rem;
+  margin-bottom: 0.8rem;
+  padding-right: 0rem;
+  margin-right: 0.5rem;
+}
+
+input.calculations {
+  font-size: 0.8rem;
+  padding-right: 0.5rem;
+}
+
+@media only screen and (max-width:800px)
+{
+/* portrait tablets, portrait iPad, landscape e-readers, landscape 800x480 or 854x480 phones */
+  input.main {
+    margin-right: 0.8rem;
+    padding: 0rem;
+  }
+  input.calculations {
+    margin-right: 0.8rem;
+    margin-bottom: 0.5rem;
+    width: 20rem;
+  }
+  .display {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+
+
+
+
+/* Footer */
+.footer-info {
+  padding-top: 1.3rem;
+}
+footer {
+  display: flex;
+  justify-content: center;
+}
+
+.credits {
+  font-family: 'Dancing Script', cursive;
+  font-size: 1.3rem;
+}

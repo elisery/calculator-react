@@ -1,6 +1,7 @@
 import React, { Component } from "react";
-import Display from "./components/Display";
-import ButtonPad from "./components/ButtonPad";
+import Display from "./Display";
+import ButtonPad from "./ButtonPad";
+import Footer from "./Footer";
 import "./App.css"
 
 class App extends Component {
@@ -13,17 +14,18 @@ class App extends Component {
   render() {
     const { loading } = this.state;
 
-    if (loading) {
-      return(
-        <div>
-          <h3>Loading...</h3>
-        </div>
-      )
-    }
+    // if (loading) {
+    //   return(
+    //     <div>
+    //       <h3>Loading...</h3>
+    //     </div>
+    //   )
+    // }
     return(
-      <main>
+      <main className="main-layout main-shadow main-border">
         <Display />
         <ButtonPad />
+        <Footer />
       </main>
     )
   }

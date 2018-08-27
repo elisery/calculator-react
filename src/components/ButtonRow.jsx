@@ -8,7 +8,9 @@ class ButtonRow extends Component {
     }
   }
   render() {
-    
+    return(
+      <h2>Button row</h2>
+    )
   }
 }
 
