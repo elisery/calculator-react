@@ -8,25 +8,26 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      loading: true
+      displayVal: '',
+      displayOp: ''
     }
+    this.buttonPress = this.buttonPress.bind(this);
+  }
+  buttonPress(val) {
+    // console.log(val);
+    this.setState({ displayVal: val });
   }
   render() {
-    const { loading } = this.state;
+    const { displayVal, displayOp } = this.state;
 
-    // if (loading) {
-    //   return(
-    //     <div>
-    //       <h3>Loading...</h3>
-    //     </div>
-    //   )
-    // }
     return(
-      <main className="main-layout main-shadow main-border">
-        <Display />
-        <ButtonPad />
+      <div>
+        <main className="main-layout main-shadow main-border">
+          <Display mainValue={displayVal}/>
+          <ButtonPad onButtonDisplayClick={this.buttonPress}/>
+        </main>
         <Footer />
-      </main>
+      </div>
     )
   }
 }
