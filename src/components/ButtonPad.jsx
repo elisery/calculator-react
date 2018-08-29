@@ -2,7 +2,6 @@ import React from "react";
 import Button from "./Button";
 
 const ButtonPad = props => {
-  
   const { onButtonDisplayClick = () => {} } = props;
   const buttonValues = {
     firstRow: ['AC', 'CE', '/', '*'],

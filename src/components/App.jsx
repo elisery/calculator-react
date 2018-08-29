@@ -12,13 +12,30 @@ class App extends Component {
       displayOp: ''
     }
     this.buttonPress = this.buttonPress.bind(this);
+    this.allClear = this.allClear.bind(this);
+    this.clearEntry = this.clearEntry.bind(this);
   }
   buttonPress(val) {
     // console.log(val);
+    if (val === 'AC') {
+      this.allClear();
+    } else if (val === 'CE') {
+      this.clearEntry();
+    } else {
+      const displayArr = this.state.displayVal;
+      displayArr.push(val);
+      this.setState({ displayVal: displayArr });
+    }
+  }
+  allClear() {
+    this.setState({ displayVal: [] })
+  }
+  clearEntry() {
     const displayArr = this.state.displayVal;
-    displayArr.push(val);
+    displayArr.pop();
     this.setState({ displayVal: displayArr });
   }
+
   render() {
     const { displayVal, displayOp } = this.state;
 
