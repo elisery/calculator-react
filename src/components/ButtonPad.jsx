@@ -20,10 +20,10 @@ const ButtonPad = props => {
     <div className="buttons">
       <div className="row">
         <div className="first-row">
-          <Button val={buttonValues.firstRow[0]} styleProp={redButton} />
+          <Button onDisplayClick={onButtonDisplayClick} val={buttonValues.firstRow[0]} styleProp={redButton} />
         </div>
         <div className="first-row">
-          <Button val={buttonValues.firstRow[1]} styleProp={redButton} />
+          <Button onDisplayClick={onButtonDisplayClick} val={buttonValues.firstRow[1]} styleProp={redButton} />
         </div>
         <div className="first-row">
           <Button val={buttonValues.firstRow[2]} styleProp={beigeButton} buttonType={operatorButton} />
@@ -37,10 +37,10 @@ const ButtonPad = props => {
           <Button onDisplayClick={onButtonDisplayClick} val={buttonValues.secondRow[0]} styleProp={beigeButton} buttonType={numberButtton}/>
         </div>
         <div className="second-row">
-          <Button val={buttonValues.secondRow[1]} styleProp={beigeButton} buttonType={numberButtton}/>
+          <Button onDisplayClick={onButtonDisplayClick} val={buttonValues.secondRow[1]} styleProp={beigeButton} buttonType={numberButtton}/>
         </div>
         <div className="second-row">
-          <Button val={buttonValues.secondRow[2]} styleProp={beigeButton} buttonType={numberButtton}/>
+          <Button onDisplayClick={onButtonDisplayClick} val={buttonValues.secondRow[2]} styleProp={beigeButton} buttonType={numberButtton}/>
         </div>
         <div className="second-row">
           <Button val={buttonValues.secondRow[3]} styleProp={beigeButton} buttonType={operatorButton}/>
@@ -48,13 +48,13 @@ const ButtonPad = props => {
       </div>
       <div className="row">
         <div className="third-row">
-          <Button val={buttonValues.thirdRow[0]} styleProp={beigeButton} buttonType={numberButtton}/>
+          <Button onDisplayClick={onButtonDisplayClick} val={buttonValues.thirdRow[0]} styleProp={beigeButton} buttonType={numberButtton}/>
         </div>
         <div className="third-row">
-          <Button val={buttonValues.thirdRow[1]} styleProp={beigeButton} buttonType={numberButtton}/>
+          <Button onDisplayClick={onButtonDisplayClick} val={buttonValues.thirdRow[1]} styleProp={beigeButton} buttonType={numberButtton}/>
         </div>
         <div className="third-row">
-          <Button val={buttonValues.thirdRow[2]} styleProp={beigeButton} buttonType={numberButtton}/>
+          <Button onDisplayClick={onButtonDisplayClick} val={buttonValues.thirdRow[2]} styleProp={beigeButton} buttonType={numberButtton}/>
         </div>
         <div className="third-row">
           <Button val={buttonValues.thirdRow[3]} styleProp={beigeButton} buttonType={operatorButton}/>
@@ -65,18 +65,18 @@ const ButtonPad = props => {
           <div className="short-rows">
             <div className="short-buttons">
               <div className="fourth-row">
-                <Button val={buttonValues.fourthRow[0]} styleProp={beigeButton} buttonType={numberButtton}/>
+                <Button onDisplayClick={onButtonDisplayClick} val={buttonValues.fourthRow[0]} styleProp={beigeButton} buttonType={numberButtton}/>
               </div>
               <div className="fourth-row">
-                <Button val={buttonValues.fourthRow[1]} styleProp={beigeButton} buttonType={numberButtton}/>
+                <Button onDisplayClick={onButtonDisplayClick} val={buttonValues.fourthRow[1]} styleProp={beigeButton} buttonType={numberButtton}/>
               </div>
               <div className="fourth-row">
-                <Button val={buttonValues.fourthRow[2]} styleProp={beigeButton} buttonType={numberButtton}/>
+                <Button onDisplayClick={onButtonDisplayClick} val={buttonValues.fourthRow[2]} styleProp={beigeButton} buttonType={numberButtton}/>
               </div>
             </div>
             <div className="short-buttons">
               <div className="fifth-row">
-                <Button val={buttonValues.fifthRow[0]} styleProp={"value inside-border beige long-horiz number"} buttonType={numberButtton}/>
+                <Button onDisplayClick={onButtonDisplayClick} val={buttonValues.fifthRow[0]} styleProp={"value inside-border beige long-horiz number"} buttonType={numberButtton}/>
               </div>
               <div className="fifth-row">
                 <Button val={buttonValues.fifthRow[1]} styleProp={beigeButton}/>

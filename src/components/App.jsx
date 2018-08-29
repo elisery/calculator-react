@@ -8,14 +8,16 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      displayVal: '',
+      displayVal: [],
       displayOp: ''
     }
     this.buttonPress = this.buttonPress.bind(this);
   }
   buttonPress(val) {
     // console.log(val);
-    this.setState({ displayVal: val });
+    const displayArr = this.state.displayVal;
+    displayArr.push(val);
+    this.setState({ displayVal: displayArr });
   }
   render() {
     const { displayVal, displayOp } = this.state;
