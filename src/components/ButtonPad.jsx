@@ -78,7 +78,7 @@ const ButtonPad = props => {
                 <Button onDisplayClick={onButtonDisplayClick} val={buttonValues.fifthRow[0]} styleProp={"value inside-border beige long-horiz number"} buttonType={numberButtton}/>
               </div>
               <div className="fifth-row">
-                <Button val={buttonValues.fifthRow[1]} styleProp={beigeButton}/>
+                <Button onDisplayClick={onButtonDisplayClick} val={buttonValues.fifthRow[1]} styleProp={beigeButton}/>
               </div>
             </div>
           </div>
