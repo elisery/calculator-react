@@ -25,10 +25,10 @@ const ButtonPad = props => {
           <Button onDisplayClick={onButtonDisplayClick} val={buttonValues.firstRow[1]} styleProp={redButton} />
         </div>
         <div className="first-row">
-          <Button val={buttonValues.firstRow[2]} styleProp={beigeButton} buttonType={operatorButton} />
+          <Button onDisplayClick={onButtonDisplayClick} val={buttonValues.firstRow[2]} styleProp={beigeButton} buttonType={operatorButton} />
         </div>
         <div className="first-row">
-          <Button val={buttonValues.firstRow[3]} styleProp={beigeButton} buttonType={operatorButton} />
+          <Button onDisplayClick={onButtonDisplayClick} val={buttonValues.firstRow[3]} styleProp={beigeButton} buttonType={operatorButton} />
         </div>
       </div>
       <div className="row">
@@ -42,7 +42,7 @@ const ButtonPad = props => {
           <Button onDisplayClick={onButtonDisplayClick} val={buttonValues.secondRow[2]} styleProp={beigeButton} buttonType={numberButtton}/>
         </div>
         <div className="second-row">
-          <Button val={buttonValues.secondRow[3]} styleProp={beigeButton} buttonType={operatorButton}/>
+          <Button onDisplayClick={onButtonDisplayClick} val={buttonValues.secondRow[3]} styleProp={beigeButton} buttonType={operatorButton}/>
         </div>
       </div>
       <div className="row">
@@ -56,7 +56,7 @@ const ButtonPad = props => {
           <Button onDisplayClick={onButtonDisplayClick} val={buttonValues.thirdRow[2]} styleProp={beigeButton} buttonType={numberButtton}/>
         </div>
         <div className="third-row">
-          <Button val={buttonValues.thirdRow[3]} styleProp={beigeButton} buttonType={operatorButton}/>
+          <Button onDisplayClick={onButtonDisplayClick} val={buttonValues.thirdRow[3]} styleProp={beigeButton} buttonType={operatorButton}/>
         </div>
       </div>
       <div className="bottom-buttons">

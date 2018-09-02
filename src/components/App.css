@@ -51,23 +51,25 @@ body {
   box-shadow: inset 0 0 7px #504937;
 }
 
-input {
+p {
   border: none;
   background-color: #EFECE4;
   font-family: 'Numans', sans-serif;
+  font-weight: lighter;
   width: 21rem;
   outline: 0;
   text-align: right;
+  margin-top: 0;
 }
 
-input.main {
+p.main {
   font-size: 2rem;
   margin-bottom: 0.8rem;
   padding-right: 0rem;
   margin-right: 0.5rem;
 }
 
-input.calculations {
+p.calculations {
   font-size: 0.8rem;
   padding-right: 0.5rem;
 }
@@ -75,11 +77,11 @@ input.calculations {
 @media only screen and (max-width:800px)
 {
 /* portrait tablets, portrait iPad, landscape e-readers, landscape 800x480 or 854x480 phones */
-  input.main {
+  p.main {
     margin-right: 0.8rem;
     padding: 0rem;
   }
-  input.calculations {
+  p.calculations {
     margin-right: 0.8rem;
     margin-bottom: 0.5rem;
     width: 20rem;
@@ -203,5 +205,7 @@ footer {
 
 .credits {
   font-family: 'Dancing Script', cursive;
+  text-align: center;
+  background-color: transparent;
   font-size: 1.3rem;
 }

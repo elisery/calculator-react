@@ -9,7 +9,7 @@ class App extends Component {
     super(props);
     this.state = {
       displayVal: [0],
-      displayOp: '',
+      displayOp: [],
       decimalFlag: false
     }
     this.buttonPress = this.buttonPress.bind(this);
@@ -22,13 +22,41 @@ class App extends Component {
       this.allClear();
     } else if (val === 'CE') {
       this.clearEntry();
+    } else if (this.isOperator(val)) {
+      /*
+      1. add to displayOp and clear display val 
+      */
     } else {
-      this.showValues(val);
+      this.mainDisplay(val);
     }
   }
 
-  showValues(val) {
+  /* 
+  - function to handle operations and equals
+  */
+
+  isOperator(val) {
+    switch(val) {
+      case '-':
+        return true;
+      case '+':
+        return true;
+      case '*':
+        return true;
+      case '/':
+        return true;
+      default:
+        return false;
+    }
+  }
+
+  mainDisplay(val) {
+    /* Display values in main calc display */
     const displayArr = this.state.displayVal;
+    const displayOpArr = this.state.displayOp;
+    /*
+     
+    */
     if (val === '.') {
       if (!this.state.decimalFlag) {
         this.setState({ decimalFlag: true })
@@ -40,13 +68,6 @@ class App extends Component {
       displayArr.push(val);
     }
     this.setState({ displayVal: displayArr });
-  }
-  /* 
-  - Switch statements to detect operators 
-  */
-
-  mainDisplay() {
-    /* Display values in main calc display */
   }
 
   operationsDisplay() {
