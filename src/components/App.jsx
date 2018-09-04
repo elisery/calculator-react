@@ -8,7 +8,7 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      displayVal: [''],
+      displayVal: [],
       displayOp: [],
       decimalFlag: false
     }
@@ -30,7 +30,7 @@ class App extends Component {
   }
 
   /* 
-  - function to handle operations and equals
+  - function to handle equals
   */
 
   isOperator(val) {
@@ -51,9 +51,7 @@ class App extends Component {
   mainDisplay(val) {
     /* Display values in main calc display */
     const displayArr = this.state.displayVal;
-    /*
-     
-    */
+
     if (val === '.') {
       if (!this.state.decimalFlag) {
         this.setState({ decimalFlag: true })
@@ -69,25 +67,35 @@ class App extends Component {
 
   operationsDisplay(val) {
     /* Display values and operations in lower display */
-    /*
-    1. display the displayOp joined arr PLUS a the state of the displayVal
-    */
     const newVal = this.state.displayVal.join('');
     const opArr = this.state.displayOp;
-    opArr.push(newVal);
-    opArr.push(val);
+    // If last value in array is an operator & there is no number to append, 
+    // swap old operator with new one
+    if (this.isOperator(opArr[opArr.length-1]) && newVal === '') {
+      opArr.pop();
+      opArr.push(val);
+    } else {
+      opArr.push(newVal);
+      opArr.push(val);
+    }
     this.setState({ displayOp: opArr });
-    this.setState({ displayVal: [0] });
-    console.log(this.state.displayOp); 
+    this.setState({ displayVal: [] });
   }
 
   allClear() {
-    this.setState({ displayVal: [] })
+    this.setState({ displayVal: [], displayOp: [] })
   }
+
   clearEntry() {
     const displayArr = this.state.displayVal;
-    displayArr.pop();
-    this.setState({ displayVal: displayArr });
+    const displayOpsArr = this.state.displayOp;
+    if (displayArr.join('') === '') {
+      displayOpsArr.pop();
+      this.setState({ displayOp: displayOpsArr });
+    } else  {
+      displayArr.pop();
+      this.setState({ displayVal: displayArr });
+    }
   }
 
   render() {

@@ -64,9 +64,10 @@ p {
 
 p.main {
   font-size: 2rem;
-  margin-bottom: 0.8rem;
+  margin-bottom: 0.5rem;
   padding-right: 0rem;
   margin-right: 0.5rem;
+  min-height: 2.2rem;
 }
 
 p.calculations {
