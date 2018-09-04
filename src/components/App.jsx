@@ -8,7 +8,7 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      displayVal: [0],
+      displayVal: [''],
       displayOp: [],
       decimalFlag: false
     }
@@ -23,9 +23,7 @@ class App extends Component {
     } else if (val === 'CE') {
       this.clearEntry();
     } else if (this.isOperator(val)) {
-      /*
-      1. add to displayOp and clear display val 
-      */
+      this.operationsDisplay(val);
     } else {
       this.mainDisplay(val);
     }
@@ -53,7 +51,6 @@ class App extends Component {
   mainDisplay(val) {
     /* Display values in main calc display */
     const displayArr = this.state.displayVal;
-    const displayOpArr = this.state.displayOp;
     /*
      
     */
@@ -70,8 +67,18 @@ class App extends Component {
     this.setState({ displayVal: displayArr });
   }
 
-  operationsDisplay() {
+  operationsDisplay(val) {
     /* Display values and operations in lower display */
+    /*
+    1. display the displayOp joined arr PLUS a the state of the displayVal
+    */
+    const newVal = this.state.displayVal.join('');
+    const opArr = this.state.displayOp;
+    opArr.push(newVal);
+    opArr.push(val);
+    this.setState({ displayOp: opArr });
+    this.setState({ displayVal: [0] });
+    console.log(this.state.displayOp); 
   }
 
   allClear() {
@@ -89,7 +96,7 @@ class App extends Component {
     return(
       <div>
         <main className="main-layout main-shadow main-border">
-          <Display mainValue={displayVal}/>
+          <Display mainValue={displayVal} opValue={displayOp}/>
           <ButtonPad onButtonDisplayClick={this.buttonPress}/>
         </main>
         <Footer />
