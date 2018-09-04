@@ -31,6 +31,7 @@ class App extends Component {
 
   /* 
   - function to handle equals
+  - check for display limit
   */
 
   isOperator(val) {
