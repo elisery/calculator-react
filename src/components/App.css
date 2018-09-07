@@ -67,12 +67,13 @@ p.main {
   margin-bottom: 0.5rem;
   padding-right: 0rem;
   margin-right: 0.5rem;
-  min-height: 2.2rem;
+  min-height: 2.4rem;
 }
 
 p.calculations {
   font-size: 0.8rem;
   padding-right: 0.5rem;
+  min-height: 1.2rem;
 }
 
 @media only screen and (max-width:800px)

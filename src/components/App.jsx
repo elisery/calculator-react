@@ -113,7 +113,7 @@ class App extends Component {
       displayArr[0] = val;
     } else {
       // Check for display length limit
-      displayArr.length <= 18 ? displayArr.push(val) : false;
+      displayArr.length <= 18 ? displayArr.push(val) : displayArr.push();
     }
     this.setState({ displayVal: displayArr });
   }
