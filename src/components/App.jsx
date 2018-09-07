@@ -10,12 +10,9 @@ class App extends Component {
     this.state = {
       displayVal: [],
       displayOp: [],
-      decimalFlag: false,
-      answer: ''
+      decimalFlag: false
     }
     this.buttonPress = this.buttonPress.bind(this);
-    // this.allClear = this.allClear.bind(this);
-    // this.clearEntry = this.clearEntry.bind(this);
   }
 
   buttonPress(val) {
@@ -32,19 +29,14 @@ class App extends Component {
     }
   }
 
-  /* 
-  - check for display limit
-  */
   calculate() {
-    /*
-    0. If there is a value in displayVal push it to displayOp
-    00.Next If last value in displayOp, pop it off
-    1. calculate all values in displayOp array
-    2. clear displayOp array
-    3. set displayVal array to the total answer
-    */
+    let i = 0;
+    let total = 0;
+    let num1, num2, operator;
+    let answerArr = [];
     const val = this.state.displayVal.join('');
     const opArr = this.state.displayOp;
+    
     // If there is a value in main display push it to the lower display array
     if (val !== '') {
       opArr.push(val);
@@ -55,9 +47,7 @@ class App extends Component {
       opArr.pop();
       this.setState({ displayOp: opArr });
     }
-    let i, total = 0;
-    let num1, num2, operator;
-    let answerArr = [];
+
     while (i < opArr.length) {
       if (i === 0) {
         num1 = Number(opArr[i]);
@@ -72,9 +62,12 @@ class App extends Component {
         i += 2;
       }
     }
-    answerArr.push(total);
-    this.setState({ displayVal: answerArr });
-    this.setState({ displayOp: [] });
+    String(total).length <= 18 ? answerArr.push(total) : answerArr.push('Digital Limit Met');
+    this.setState({ 
+      displayVal: answerArr,
+      displayOp: [],
+      decimalFlag: false 
+    });
   }
 
   getAnswer(num1, num2, operator) {
@@ -87,6 +80,8 @@ class App extends Component {
         return num1 * num2;
       case '/': 
         return num1 / num2;
+      default: 
+        return 0;
     }
   }
 
@@ -117,7 +112,8 @@ class App extends Component {
     } else if (displayArr.length === 1 && displayArr[0] === 0) {
       displayArr[0] = val;
     } else {
-      displayArr.push(val);
+      // Check for display length limit
+      displayArr.length <= 18 ? displayArr.push(val) : false;
     }
     this.setState({ displayVal: displayArr });
   }
@@ -140,7 +136,11 @@ class App extends Component {
   }
 
   allClear() {
-    this.setState({ displayVal: [], displayOp: [] })
+    this.setState({ 
+      displayVal: [], 
+      displayOp: [],
+      decimalFlag: false 
+    })
   }
 
   clearEntry() {
