@@ -33,7 +33,6 @@ class App extends Component {
   }
 
   /* 
-  - function to handle equals
   - check for display limit
   */
   calculate() {
@@ -42,8 +41,7 @@ class App extends Component {
     00.Next If last value in displayOp, pop it off
     1. calculate all values in displayOp array
     2. clear displayOp array
-    3. clear displayVal array
-    4. push answer to displayVal array
+    3. set displayVal array to the total answer
     */
     const val = this.state.displayVal.join('');
     const opArr = this.state.displayOp;
@@ -57,14 +55,38 @@ class App extends Component {
       opArr.pop();
       this.setState({ displayOp: opArr });
     }
-
-
+    let i, total = 0;
+    let num1, num2, operator;
+    let answerArr = [];
+    while (i < opArr.length) {
+      if (i === 0) {
+        num1 = Number(opArr[i]);
+        operator = opArr[i + 1];
+        num2 = Number(opArr[i + 2]);
+        total = this.getAnswer(num1, num2, operator);
+        i += 3;
+      } else {
+        operator = opArr[i];
+        num2 = Number(opArr[i + 1]);
+        total = this.getAnswer(total, num2, operator);
+        i += 2;
+      }
+    }
+    answerArr.push(total);
+    this.setState({ displayVal: answerArr });
+    this.setState({ displayOp: [] });
   }
 
   getAnswer(num1, num2, operator) {
     switch(operator) {
       case '+':
-      
+        return num1 + num2;
+      case '-': 
+        return num1 - num2;
+      case '*': 
+        return num1 * num2;
+      case '/': 
+        return num1 / num2;
     }
   }
 
@@ -82,8 +104,6 @@ class App extends Component {
         return false;
     }
   }
-
-
 
   mainDisplay(val) {
     /* Display values in main calc display */
