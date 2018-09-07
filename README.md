@@ -1,6 +1,25 @@
-Deployment in progress, please stay tuned. 
+# ReactJS Calculator
 
-Approximate release date: Sept 4 - 8 2018
+This is a web calculator application that does basic math operations.
 
-For the jQuery version of this project please see https://elisery.github.io/calculator/
+The current version can be viewed on GitHub pages at: 
+https://calculator-react-elise.herokuapp.com/
+
+## Tech Stack
+
+- HTML5
+- CSS
+- ReactJS
+
+## Developer
+
+This application was designed and coded by Elise Yohm
+
+## Previous Version
+
+This application was previously released in jQuery format and can be viewed here: 
+https://elisery.github.io/calculator/
+
+
+
 
