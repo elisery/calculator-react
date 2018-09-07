@@ -83,7 +83,7 @@ const ButtonPad = props => {
             </div>
           </div>
           <div className="equals">
-            <Button val={buttonValues.sixthRow[0]} styleProp={"value inside-border grey long-vertical"} />
+            <Button onDisplayClick={onButtonDisplayClick} val={buttonValues.sixthRow[0]} styleProp={"value inside-border grey long-vertical"} />
           </div>  
         </div>
 

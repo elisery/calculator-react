@@ -10,11 +10,12 @@ class App extends Component {
     this.state = {
       displayVal: [],
       displayOp: [],
-      decimalFlag: false
+      decimalFlag: false,
+      answer: ''
     }
     this.buttonPress = this.buttonPress.bind(this);
-    this.allClear = this.allClear.bind(this);
-    this.clearEntry = this.clearEntry.bind(this);
+    // this.allClear = this.allClear.bind(this);
+    // this.clearEntry = this.clearEntry.bind(this);
   }
 
   buttonPress(val) {
@@ -24,6 +25,8 @@ class App extends Component {
       this.clearEntry();
     } else if (this.isOperator(val)) {
       this.operationsDisplay(val);
+    } else if (val === '=') {
+      this.calculate();
     } else {
       this.mainDisplay(val);
     }
@@ -33,6 +36,37 @@ class App extends Component {
   - function to handle equals
   - check for display limit
   */
+  calculate() {
+    /*
+    0. If there is a value in displayVal push it to displayOp
+    00.Next If last value in displayOp, pop it off
+    1. calculate all values in displayOp array
+    2. clear displayOp array
+    3. clear displayVal array
+    4. push answer to displayVal array
+    */
+    const val = this.state.displayVal.join('');
+    const opArr = this.state.displayOp;
+    // If there is a value in main display push it to the lower display array
+    if (val !== '') {
+      opArr.push(val);
+      this.setState({ displayOp: opArr });
+    }
+    // If last value in the lower display is an operator, pop it off
+    if (this.isOperator(opArr[opArr.length-1])) {
+      opArr.pop();
+      this.setState({ displayOp: opArr });
+    }
+
+
+  }
+
+  getAnswer(num1, num2, operator) {
+    switch(operator) {
+      case '+':
+      
+    }
+  }
 
   isOperator(val) {
     switch(val) {
@@ -48,6 +82,8 @@ class App extends Component {
         return false;
     }
   }
+
+
 
   mainDisplay(val) {
     /* Display values in main calc display */
