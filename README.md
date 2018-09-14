@@ -1,5 +1,7 @@
 # ReactJS Calculator
 
+➕ ➖ ➗ ✖️
+
 This is a web calculator application that does basic math operations.
 
 The current version can be viewed on GitHub pages at: 
